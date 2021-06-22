@@ -1,0 +1,15 @@
+.HeatSpot {
+  margin: 10px;
+  position: relative;
+
+  &__Circle {
+    position: absolute;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+
+    &__Inner {
+
+    }
+  }
+}
