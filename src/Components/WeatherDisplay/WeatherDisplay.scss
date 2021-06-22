@@ -34,15 +34,6 @@
   }
 
   &__Temperature {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, minmax(min-content, max-content));
-    grid-template-areas:
-    "header header"
-    ". ."
-    ". .";
-    grid-gap: 10px;
-
     &__MinMax {
       display: flex;
       gap: 5px;
@@ -53,6 +44,10 @@
     & h3 {
       grid-area: header;
 
+    }
+
+    ul {
+      text-align: left;
     }
   }
 

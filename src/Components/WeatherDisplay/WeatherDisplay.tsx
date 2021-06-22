@@ -3,8 +3,6 @@ import './WeatherDisplay.scss';
 import {useSelector} from "react-redux";
 import {Tstate} from "../../Config/TypeScript/Types";
 import Conv from "../../Utils/unitConverter";
-import HeatSpot from "../../UI/HeatSpot/HeatSpot";
-import Compass from "../../UI/Compass/Compass";
 
 const WeatherDisplay = () => {
 
@@ -24,26 +22,17 @@ const WeatherDisplay = () => {
                 <p>{date !== null && date}</p>
             </div>
             <div className="WeatherDisplay__TagLine">
-                <h1>{summary.description != null && summary.description.toUpperCase()}</h1>
+                <h1>{summary.description != null && summary.description}</h1>
             </div>
             <div className="WeatherDisplay__Temperature">
                 <h3>Temperatures</h3>
-                <div className="place-center"><HeatSpot temperature={temperature.actual}
-                                                        large={true}>{Conv(temperature.actual, "celsius", temperature_unit)}</HeatSpot>
-                    <span>Feels like: {Conv(temperature.feelsLike, "celsius", temperature_unit)}</span>
-                </div>
-                <div className="WeatherDisplay__Temperature__MinMax justify-center">
-                    <div className="justify-center">Minimum Today:<HeatSpot
-                        temperature={temperature.min}>{Conv(temperature.min, "celsius", temperature_unit)}</HeatSpot>
-                    </div>
-                    <div className="justify-center">Maximum Today:<HeatSpot
-                        temperature={temperature.min}>{Conv(temperature.max, "celsius", temperature_unit)}</HeatSpot>
-                    </div>
-                </div>
+                <p>Feels like: {Conv(temperature.feelsLike, "celsius", temperature_unit)}</p>
+                <p>Minimum Today: {Conv(temperature.min, "celsius", temperature_unit)}</p>
+                <p>Maximum Today: {Conv(temperature.max, "celsius", temperature_unit)}</p>
             </div>
             <div className="WeatherDisplay__Wind">
                 <h3>Wind</h3>
-                <div><Compass direction={wind.deg} speed={Conv(wind.speed, "kmh", length_unit)}/></div>
+                <p>{Conv(wind.speed, "kmh", length_unit)}</p>
             </div>
             <div className="WeatherDisplay__MoreInfo">
                 <h3>More Information</h3>

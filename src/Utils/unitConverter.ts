@@ -6,7 +6,7 @@ const unitConverter = (value: number | null, unit_in: Tunit_in, unit_out?: Tunit
         return String(value);
     }
     if (unit_in === "celsius") {
-        value = Math.round(value);
+        // value = Math.round(value);
         if (unit_out === "kelvin") {
             return value + 273.15 + "K";
         }
