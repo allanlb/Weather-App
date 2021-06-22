@@ -2,7 +2,7 @@
 
 ## Demo
 
-https://weather-app-one-omega.vercel.app/
+https://weather-app-allanlb.vercel.app/
 
 ## Stack
 
